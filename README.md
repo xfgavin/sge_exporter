@@ -3,7 +3,12 @@ SGE exporter for prometheus based on the [gridengine_prometheus project](https:/
 This project does:
   1. compiles the gridengine_prometheus project and grabs the gridengine_exporter binary.
   2. encapsulates the gridengine_exporter into a debian image that allows it to run.
+  
+## Usage:
+### To create the exporter docker image:
+After clone, please run mk_sge_exporter.sh
 
+### To run the exporter docker image:
 You may run it using docker run as:
 ```
 docker run -v /var/lib/gridengine:/var/lib/gridengine:ro -v /usr/lib/gridengine:/usr/lib/gridengine:ro -e SGE_CELL=YOUR_SGE_CELL -e PORT=YOUR_PORT sge_exporter:20200510
