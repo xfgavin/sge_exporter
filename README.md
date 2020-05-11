@@ -6,12 +6,12 @@ This project does:
   
 ## Usage:
 ### To create the exporter docker image:
-After clone, please run mk_sge_exporter.sh
+After clone, please run docker build.
 
 ### To run the exporter docker image:
 You may run it using docker run as:
 ```
-docker run -v /var/lib/gridengine:/var/lib/gridengine:ro -v /usr/lib/gridengine:/usr/lib/gridengine:ro -e SGE_CELL=YOUR_SGE_CELL -e PORT=YOUR_PORT sge_exporter:20200510
+docker run -v /var/lib/gridengine:/var/lib/gridengine:ro -v /usr/lib/gridengine:/usr/lib/gridengine:ro -e SGE_CELL=YOUR_SGE_CELL -e PORT=YOUR_PORT sge_exporter:20200511
 ```
 
 or via docker-compose as:
@@ -19,7 +19,7 @@ or via docker-compose as:
 version: '2'
 services:
   sge-exporter:
-    image: sge_exporter:20200510
+    image: sge_exporter:20200511
     environment:
       SGE_CELL: "YOUR_SGE_CELL"
       PORT: "YOUR_PORT"
