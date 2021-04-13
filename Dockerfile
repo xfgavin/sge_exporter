@@ -2,6 +2,7 @@ FROM golang:alpine AS compiler
 RUN    apk add --no-cache git \
     && git clone https://github.com/metrumresearchgroup/gridengine_prometheus.git \
     && cd gridengine_prometheus/ \
+    && go mod download golang.org/x/text \
     && go build -o gridengine_exporter cmd/server/main.go
 
 FROM debian:buster-slim
